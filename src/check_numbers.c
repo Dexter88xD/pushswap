@@ -29,10 +29,10 @@ int	check_duplicates(t_list *stack_a)
 		}
 		current = current->next;
 	}
-	return(0);
+	return (0);
 }
 
-int	is_it_integer(char	*nbr)
+int	is_it_integer(char *nbr)
 {
 	long	check;
 	int		sign;

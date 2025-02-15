@@ -17,7 +17,7 @@ FCLEAN_LIBFT = @$(MAKE) fclean -C $(LIBFT)
 S_NAME = push_swap
 BS_NAME = checker
 
-SRCS = main.c check_numbers.c
+SRCS = main.c check_numbers.c push_swap.c rotate.c reverse_rotate.c
 BSRCS = 
 
 S_OBJECTS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
