@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/15 17:55:29 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/15 21:37:18 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	free_node(char	**nbr)
 	free(nbr);
 }
 
-void	print_stack(t_list *stack_a)
+void	print_stack(t_list *stack)
 {
 	t_list	*temp_stack;
 	int		a;
 
 	a = 1;
-	temp_stack = stack_a;
+	temp_stack = stack;
 	while (temp_stack)
 	{
 		ft_printf("The argument number %d: %d\n", a++,
@@ -78,11 +78,5 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	if (store_numbers(ac, av, &stack_a, &temp_stack) == 1)
 		return (1);
-	ft_printf("your order:\n");
-	print_stack(stack_a);
-	reverse_rotate_a(&stack_a);
-	ft_printf("Reverse rotating the list:\n");
-	print_stack(stack_a);
-	ft_lstclear(&stack_a);
 	return (0);
 }
