@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/14 18:46:32 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/15 00:57:48 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,13 @@ int	store_numbers(int ac, char **av, t_list **stack_a, t_list **temp_stack)
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
+	t_list	*stack_b;
 	t_list	*temp_stack;
 
 	if (ac < 2)
 		return (ft_printf("Please provide the numbers to be sorted!\n"), 1);
 	stack_a = NULL;
+	stack_b = NULL;
 	if (store_numbers(ac, av, &stack_a, &temp_stack) == 1)
 		return (1);
 	print_stack(&stack_a);
