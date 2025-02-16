@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/15 21:23:37 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/16 23:15:49 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@
 # include "libft.h"
 # include <limits.h>
 
-/*******************PARSING*******************/
+/***********PARSING AND CHECKING***********/
+
+int		store_and_check(int ac, char **av, t_list **stack_a);
+int		store_numbers(int ac, char **av, t_list **stack_a);
+
+int		check_duplicates(t_list *stack_a);
+int		is_it_sorted(t_list *stack_a);
+
+int		check_numbers(int i, char **nbr);
 
 int		is_it_integer(char *nbr);
-int		check_numbers(int i, char **nbr);
-int		check_duplicates(t_list *stack_a);
-int		store_numbers(int ac, char **av, t_list **stack_a, t_list **temp_stack);
 
 void	free_node(char **nbr);
 void	print_stack(t_list *stack_a);

@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/14 18:51:42 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/16 23:15:29 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ int	is_it_integer(char *nbr)
 	check *= sign;
 	if (check < INT_MIN || check > INT_MAX)
 		return (1);
+	return (0);
+}
+
+int	is_it_sorted(t_list *stack_a)
+{
+	while (stack_a && stack_a->next)
+	{
+		if (stack_a->content > stack_a->next->content)
+			return (1);
+		stack_a = stack_a->next;
+	}
 	return (0);
 }
 
