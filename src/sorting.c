@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 05:13:58 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/17 08:41:12 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:41:24 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,31 @@ int	sort_three(t_list **stack_a)
 	return (1);
 }
 
+int	sort_big(t_list **stack_a, t_list **stack_b)
+{
+	int	stack_a_size;
+
+	stack_a_size = ft_lstsize(*stack_a);
+	if (stack_a_size-- && !is_it_sorted(*stack_a))
+		push_a(stack_a, stack_b);
+	if (stack_a_size-- && !is_it_sorted(*stack_a))
+		push_a(stack_a, stack_b);
+	while (stack_a_size-- && !is_it_integer(*stack_a))
+	{
+		update_stack_a(*stack_a, *stack_b);
+		push_a(stack_a, stack_b);
+	}
+	sort_three(stack_a);
+	while (*stack_b)
+	{
+		update_stack_b(*stack_a, *stack_b);
+		push_b(stack_a, stack_b);
+	}
+	update_index(*stack_a);
+	putting_min_top(stack_a);
+	return (1);
+}
+
 int	sorting(t_list **stack_a, t_list **stack_b)
 {
 	(void)stack_b;
@@ -46,6 +71,6 @@ int	sorting(t_list **stack_a, t_list **stack_b)
 	else if (ft_lstsize(*stack_a) == 3)
 		sort_three(stack_a);
 	else
-		ft_printf("More than three, to be done later!\n");
+		sort_big(stack_a, stack_b);
 	return (0);
 }

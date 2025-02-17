@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/17 05:13:39 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:42:01 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,11 @@ int		reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 /*******************SORTING*******************/
 
 int		sorting(t_list **stack_a, t_list **stack_b);
+int		sort_big(t_list **stack_a, t_list **stack_b);
+int		sort_three(t_list **stack_a);
+
+/*******************UPDATING*******************/
+
+int		update_stack_a(t_list *stack_a, t_list *stack_b);
 
 #endif
