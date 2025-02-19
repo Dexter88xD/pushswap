@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:20:19 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/17 14:35:54 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:42:09 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ typedef struct s_list
 	int				cheap;
 	struct s_list	*target;
 	struct s_list	*next;
-	struct s_list	*previous;
 }					t_list;
 
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),

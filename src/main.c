@@ -6,13 +6,13 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/17 10:50:27 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:21:18 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-void	free_node(char	**nbr)
+void	free_node(char **nbr)
 {
 	int	i;
 
@@ -31,8 +31,7 @@ void	print_stack(t_list *stack)
 	temp_stack = stack;
 	while (temp_stack)
 	{
-		ft_printf("The argument number %d: %d\n", a++,
-			temp_stack->content);
+		ft_printf("The argument number %d: %d\n", a++, temp_stack->content);
 		temp_stack = temp_stack->next;
 	}
 }
@@ -85,11 +84,14 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	if (store_and_check(ac, av, &stack_a) == 0)
 		return (-1);
+	ft_printf("BEFORE\n");
+	ft_printf("Stack a:\n");
+	print_stack(stack_a);
+	ft_printf("\n");
 	if (is_it_sorted(stack_a) == 0)
 	{
-		ft_printf("Sorting:\n");
+		// ft_printf("Sorting:\n");
 		sorting(&stack_a, &stack_b);
-		print_stack(stack_a);
 	}
 	else
 		ft_printf("Sorted!\n");

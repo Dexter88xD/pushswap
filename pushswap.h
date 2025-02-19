@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/17 14:42:01 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:54:38 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		is_it_integer(char *nbr);
 void	free_node(char **nbr);
 void	print_stack(t_list *stack_a);
 
-//****************//OPERATIONS//****************//
+//****************\\//OPERATIONS\\//****************//
 
 /*******************SWAP*******************/
 
@@ -58,16 +58,53 @@ int		reverse_rotate_a(t_list **stack_a);
 int		reverse_rotate_b(t_list **stack_b);
 int		reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 
-//*******************////*******************//
+//***********************//\\//\\***********************//
 
 /*******************SORTING*******************/
 
 int		sorting(t_list **stack_a, t_list **stack_b);
 int		sort_big(t_list **stack_a, t_list **stack_b);
-int		sort_three(t_list **stack_a);
+int		sort_three(t_list **stack);
 
 /*******************UPDATING*******************/
 
-int		update_stack_a(t_list *stack_a, t_list *stack_b);
+int		putting_min_top(t_list **stack);
+
+int		update_index(t_list *stack);
+int		update_stack_a(t_list **stack_a, t_list **stack_b);
+int		update_stack_b(t_list **stack_a, t_list **stack_b);
+
+/*******************FIND MIN AND MAX*******************/
+
+int		find_min_num(t_list *stack);
+int		find_max_num(t_list *stack);
+
+t_list	*find_min(t_list *stack);
+t_list	*find_max(t_list *stack);
+
+/*******************SET TARGET*******************/
+
+int		set_target_stack_a(t_list *stack_a, t_list *stack_b);
+int		find_closest_min(t_list *a, t_list *b, long *closest_small);
+
+int		set_target_stack_b(t_list *stack_a, t_list *stack_b);
+int		find_closest_max(t_list *a, t_list *b, long *closest_big);
+
+/*******************FIND CHEAP AND COST*******************/
+
+int		set_cost(t_list *stack_a, t_list *stack_b);
+int		find_cheapest(t_list *stack);
+
+t_list  *get_cheapest_node(t_list *stack);
+
+/*******************DUMPING*******************/
+
+int     prepare_stack_a(t_list **stack_a, t_list *cheapest);
+int     prepare_stack_b(t_list **stack_b, t_list *cheapest);
+int     dumping_stack_a(t_list **stack_a, t_list **stack_b);
+int     dumping_stack_b(t_list **stack_a, t_list **stack_b);
+
+/*******************FINISHING*******************/
+int     putting_min_top(t_list **stack);
 
 #endif
