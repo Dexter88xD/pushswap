@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 07:40:37 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/18 08:20:48 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:25:04 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*find_min(t_list *stack)
 	min_num = INT_MAX;
 	while (stack)
 	{
-		if (stack->content > min_num)
+		if (stack->content < min_num)
 		{
 			min_num = stack->content;
 			min = stack;

@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:39:51 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/19 11:42:14 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:06:56 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	putting_min_top(t_list **stack)
 {
 	t_list	*minimum;
 
-	minimum = find_min(*stack);		
+	minimum = find_min(*stack);
 	while (*stack != minimum)
 	{
 		if (minimum->above_half)
@@ -29,8 +29,8 @@ int	putting_min_top(t_list **stack)
 
 int	update_index(t_list *stack)
 {
-	int		i;
-	int		half;
+	int	i;
+	int	half;
 
 	if (!stack || !stack->next)
 		return (0);

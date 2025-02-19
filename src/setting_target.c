@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:21:28 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/19 11:29:57 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:33:22 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int	set_target_stack_b(t_list *stack_a, t_list *stack_b)
 {
 	long	closeset_big;
 	t_list	*temp_a;
-	
-	if 	(!stack_a || !stack_b)
+
+	if (!stack_a || !stack_b)
 		return (0);
 	while (stack_b)
 	{

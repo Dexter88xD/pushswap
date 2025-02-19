@@ -6,13 +6,13 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:24:14 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/19 09:28:42 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:33:48 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-int set_cost(t_list *stack_a, t_list *stack_b)
+int	set_cost(t_list *stack_a, t_list *stack_b)
 {
 	int	a_size;
 	int	b_size;
@@ -30,7 +30,7 @@ int set_cost(t_list *stack_a, t_list *stack_b)
 			stack_a->target->cost += stack_a->target->index;
 		stack_a = stack_a->next;
 	}
-    return (1);
+	return (1);
 }
 
 int	find_cheapest(t_list *stack)
@@ -52,7 +52,7 @@ int	find_cheapest(t_list *stack)
 	return (1);
 }
 
-t_list  *get_cheapest_node(t_list *stack)
+t_list	*get_cheapest_node(t_list *stack)
 {
 	while (stack)
 	{
