@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 05:13:58 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/19 18:57:25 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/20 11:45:50 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int	sort_big(t_list **stack_a, t_list **stack_b)
 	int	stack_a_size;
 
 	stack_a_size = ft_lstsize(*stack_a);
-	ft_printf("Stack a:\n");
-	print_stack(*stack_a);
 	if (stack_a_size-- > 3 && !is_it_sorted(*stack_a))
 		push_b(stack_a, stack_b);
 	if (stack_a_size-- > 3 && !is_it_sorted(*stack_a))
@@ -40,10 +38,6 @@ int	sort_big(t_list **stack_a, t_list **stack_b)
 	while (stack_a_size-- > 3 && !is_it_sorted(*stack_a))
 	{
 		update_stack_a(stack_a, stack_b);
-		ft_printf("Stack b:\n");
-		print_stack(*stack_b);
-		ft_printf("Stack a:\n");
-		print_stack(*stack_a);
 		dumping_stack_a(stack_a, stack_b);
 	}
 	sort_three(stack_a);
