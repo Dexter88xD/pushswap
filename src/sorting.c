@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 05:13:58 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/20 11:45:50 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:46:00 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	sort_three(t_list **stack)
 
 	max = find_max(*stack);
 	if ((*stack) == max)
-		rotate_a(stack);
+		rotate_a(stack, 0);
 	else if ((*stack)->next == max)
-		reverse_rotate_a(stack);
+		reverse_rotate_a(stack, 0);
 	if ((*stack)->content > (*stack)->next->content)
 		swap_a(stack);
 	return (1);

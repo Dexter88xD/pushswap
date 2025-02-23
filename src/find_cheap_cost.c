@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:24:14 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/19 16:33:48 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:35:07 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	set_cost(t_list *stack_a, t_list *stack_b)
 		stack_a->cost = stack_a->index;
 		if (!(stack_a->above_half))
 			stack_a->cost = a_size - stack_a->index;
-		if (!(stack_a->target->above_half))
-			stack_a->target->cost += b_size - stack_a->target->index;
+		if (stack_a->target->above_half)
+			stack_a->cost += stack_a->target->index;
 		else
-			stack_a->target->cost += stack_a->target->index;
+			stack_a->cost += b_size - stack_a->target->index;
 		stack_a = stack_a->next;
 	}
 	return (1);

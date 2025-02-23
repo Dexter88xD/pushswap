@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:39:51 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/19 16:06:56 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:45:22 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	putting_min_top(t_list **stack)
 	while (*stack != minimum)
 	{
 		if (minimum->above_half)
-			rotate_a(stack);
+			rotate_a(stack, 0);
 		else
-			reverse_rotate_a(stack);
+			reverse_rotate_a(stack, 0);
 	}
 	return (1);
 }
@@ -39,7 +39,7 @@ int	update_index(t_list *stack)
 	while (stack)
 	{
 		stack->index = i;
-		if (i < half)
+		if (i <= half)
 			stack->above_half = 1;
 		else
 			stack->above_half = 0;

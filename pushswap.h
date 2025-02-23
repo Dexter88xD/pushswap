@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/19 10:54:38 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:45:33 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,16 @@ int		push_b(t_list **stack_a, t_list **stack_b);
 
 /*******************ROTATE*******************/
 
-int		rotate_a(t_list **stack_a);
-int		rotate_b(t_list **stack_b);
+int		rotate_a(t_list **stack_a, int flag);
+int		rotate_b(t_list **stack_b, int flag);
 int		rotate_a_b(t_list **stack_a, t_list **stack_b);
 
 /*******************REVERSE_ROTATE*******************/
 
 t_list	*ft_lst_second_last(t_list *stack_a, t_list *temp_stack);
 
-int		reverse_rotate_a(t_list **stack_a);
-int		reverse_rotate_b(t_list **stack_b);
+int		reverse_rotate_a(t_list **stack_a, int flag);
+int		reverse_rotate_b(t_list **stack_b, int flag);
 int		reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 
 //***********************//\\//\\***********************//
@@ -95,16 +95,16 @@ int		find_closest_max(t_list *a, t_list *b, long *closest_big);
 int		set_cost(t_list *stack_a, t_list *stack_b);
 int		find_cheapest(t_list *stack);
 
-t_list  *get_cheapest_node(t_list *stack);
+t_list	*get_cheapest_node(t_list *stack);
 
 /*******************DUMPING*******************/
 
-int     prepare_stack_a(t_list **stack_a, t_list *cheapest);
-int     prepare_stack_b(t_list **stack_b, t_list *cheapest);
-int     dumping_stack_a(t_list **stack_a, t_list **stack_b);
-int     dumping_stack_b(t_list **stack_a, t_list **stack_b);
+int		prepare_stack_a(t_list **stack_a, t_list *cheapest);
+int		prepare_stack_b(t_list **stack_b, t_list *cheapest);
+int		dumping_stack_a(t_list **stack_a, t_list **stack_b);
+int		dumping_stack_b(t_list **stack_a, t_list **stack_b);
 
 /*******************FINISHING*******************/
-int     putting_min_top(t_list **stack);
+int		putting_min_top(t_list **stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/20 11:47:22 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 01:06:44 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ void	free_node(char **nbr)
 // 	temp_stack = stack;
 // 	while (temp_stack)
 // 	{
-// 		ft_printf("Argument number %d: %d\nThe cost: %d\n"\
-//				, a++, temp_stack->content, temp_stack->cost);
+// 		ft_printf("Argument number %d: 
+//          %d\nThe cost: %d\n"
+//				, a++, temp_stack->content, 
+// temp_stack->cost);
 // 		if (temp_stack->target)
-// 			ft_printf("The target: %d\n",\
+// 			ft_printf("The target: %d\n",
 //				temp_stack->target->content);
 // 		temp_stack = temp_stack->next;
 // 	}

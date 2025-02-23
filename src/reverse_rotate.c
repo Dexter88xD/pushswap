@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 13:18:08 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/15 21:38:31 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 15:50:18 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lst_second_last(t_list *stack_a, t_list *temp_stack)
 	return (second_last_stack);
 }
 
-int	reverse_rotate_a(t_list **stack_a)
+int	reverse_rotate_a(t_list **stack_a, int flag)
 {
 	t_list	*temp_stack;
 	t_list	*last_stack;
@@ -39,11 +39,12 @@ int	reverse_rotate_a(t_list **stack_a)
 	last_stack = ft_lst_second_last(*stack_a, temp_stack);
 	last_stack->next = NULL;
 	ft_lstadd_front(stack_a, temp_stack);
-	ft_printf("rra\n");
+	if (!flag)
+		ft_printf("rra\n");
 	return (1);
 }
 
-int	reverse_rotate_b(t_list **stack_b)
+int	reverse_rotate_b(t_list **stack_b, int flag)
 {
 	t_list	*temp_stack;
 	t_list	*last_stack;
@@ -54,7 +55,8 @@ int	reverse_rotate_b(t_list **stack_b)
 	last_stack = ft_lst_second_last(*stack_b, temp_stack);
 	last_stack->next = NULL;
 	ft_lstadd_front(stack_b, temp_stack);
-	ft_printf("rrb\n");
+	if (!flag)
+		ft_printf("rrb\n");
 	return (1);
 }
 
@@ -62,8 +64,8 @@ int	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b)
 {
 	if (!stack_a || !stack_b)
 		return (0);
-	rotate_a(stack_a);
-	rotate_b(stack_b);
+	reverse_rotate_a(stack_a, 1);
+	reverse_rotate_b(stack_b, 1);
 	ft_printf("rrr\n");
 	return (1);
 }

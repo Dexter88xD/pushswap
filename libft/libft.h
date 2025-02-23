@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:20:19 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/18 17:42:09 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:26:41 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ typedef struct s_list
 {
 	int				index;
 	int				content;
+	int				rank;
 	int				cost;
 	int				above_half;
 	int				cheap;
