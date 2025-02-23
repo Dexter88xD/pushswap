@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:43:05 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/23 16:44:51 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:41:07 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,32 +38,36 @@ int	prepare_stack_b(t_list **stack_b, t_list *target)
 
 int	dumping_stack_a(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*cheapest;
-
-	cheapest = get_cheapest_node(*stack_a);
-	if (cheapest->above_half && cheapest->target->above_half)
-	{
-		while (*stack_a != cheapest && *stack_b != cheapest->target)
-			rotate_a_b(stack_a, stack_b);
-		update_index(*stack_a);
-		update_index(*stack_b);
-	}
-	else if (!(cheapest->above_half) && !(cheapest->target->above_half))
-	{
-		while (*stack_a != cheapest && *stack_b != cheapest->target)
-			reverse_rotate_a_b(stack_a, stack_b);
-		update_index(*stack_a);
-		update_index(*stack_b);
-	}
-	prepare_stack_a(stack_a, cheapest);
-	prepare_stack_b(stack_b, cheapest->target);
+	int	half;
+	
+	half = ft_lstsize(*stack_a) / 3;
+	while ((*stack_a)->rank > half)
+		rotate_a(stack_a, 0);
 	push_b(stack_a, stack_b);
 	return (1);
 }
 
 int	dumping_stack_b(t_list **stack_a, t_list **stack_b)
 {
-	prepare_stack_a(stack_a, (*stack_b)->target);
+	t_list	*cheapest;
+
+	cheapest = get_cheapest_node(*stack_b);
+	if (cheapest->above_half && cheapest->target->above_half)
+	{
+		while (*stack_b != cheapest && *stack_a != cheapest->target)
+			rotate_a_b(stack_a, stack_b);
+		update_index(*stack_a);
+		update_index(*stack_b);		
+	}
+	else if (!(cheapest->above_half) && !(cheapest->target->above_half))
+	{
+		while (*stack_b != cheapest && *stack_a != cheapest->target)
+			reverse_rotate_a_b(stack_a, stack_b);
+		update_index(*stack_a);
+		update_index(*stack_b);
+	}
+	prepare_stack_b(stack_b, cheapest);
+	prepare_stack_a(stack_a, cheapest->target);
 	push_a(stack_a, stack_b);
 	return (1);
 }
