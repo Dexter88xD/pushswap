@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 05:13:58 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/23 16:39:38 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 17:37:06 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ int	sort_big(t_list **stack_a, t_list **stack_b)
 	int	stack_a_size;
 
 	stack_a_size = ft_lstsize(*stack_a);
-	// if (stack_a_size-- > 3 && !is_it_sorted(*stack_a))
-	// 	push_b(stack_a, stack_b);
-	// if (stack_a_size-- > 3 && !is_it_sorted(*stack_a))
-	// 	push_b(stack_a, stack_b);
 	while (stack_a_size-- > 3 && !is_it_sorted(*stack_a))
 	{
 		update_rank(*stack_a);

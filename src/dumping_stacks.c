@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:43:05 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/23 16:41:07 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:59:59 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,13 @@ int	prepare_stack_b(t_list **stack_b, t_list *target)
 int	dumping_stack_a(t_list **stack_a, t_list **stack_b)
 {
 	int	half;
-	
-	half = ft_lstsize(*stack_a) / 3;
+	int	size;
+
+	size = ft_lstsize(*stack_a);
+	if (size < 150)
+		half = size / 2;
+	else
+		half = size / 3;
 	while ((*stack_a)->rank > half)
 		rotate_a(stack_a, 0);
 	push_b(stack_a, stack_b);
@@ -57,7 +62,7 @@ int	dumping_stack_b(t_list **stack_a, t_list **stack_b)
 		while (*stack_b != cheapest && *stack_a != cheapest->target)
 			rotate_a_b(stack_a, stack_b);
 		update_index(*stack_a);
-		update_index(*stack_b);		
+		update_index(*stack_b);
 	}
 	else if (!(cheapest->above_half) && !(cheapest->target->above_half))
 	{

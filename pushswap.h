@@ -71,7 +71,7 @@ int		sort_three(t_list **stack);
 int		putting_min_top(t_list **stack);
 
 int		update_index(t_list *stack);
-int     update_rank(t_list *stack);
+int		update_rank(t_list *stack);
 // int		update_stack_a(t_list **stack_a, t_list **stack_b);
 int		update_stack_b(t_list **stack_a, t_list **stack_b);
 

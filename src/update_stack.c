@@ -51,7 +51,7 @@ int	update_index(t_list *stack)
 
 int	update_rank(t_list *stack)
 {
-	int	i;
+	int		i;
 	t_list	*temp;
 
 	if (!stack || !stack->next)

@@ -11,7 +11,7 @@ BONUS_DIR = src/bonus
 OBJ_DIR = obj
 BONUS_OBJ_DIR = bonus_obj
 
-MAKE_LIBFT = @$(MAKE) files -C $(LIBFT)
+MAKE_LIBFT = @$(MAKE) -C $(LIBFT)
 FCLEAN_LIBFT = @$(MAKE) fclean -C $(LIBFT)
 
 S_NAME = push_swap
