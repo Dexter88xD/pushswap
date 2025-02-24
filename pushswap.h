@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 00:37:28 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 01:21:19 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,13 @@ int		putting_min_top(t_list **stack);
 
 /*******************BONUS*******************/
 
-int		read_instructions(char **instructions);
+int		read_instructions(char **instr);
+
+int		follow_instructions(char **instr, t_list **stack_a, t_list **stack_b);
+
+int		swaping(char **instr, t_list **stack_a, t_list **stack_b, int i);
+int		pushing(char **instr, t_list **stack_a, t_list **stack_b, int i);
+int		rotations(char **instr, t_list **stack_a, t_list **stack_b, int i);
+int		rev_rotations(char **instr, t_list **stack_a, t_list **stack_b, int i);
 
 #endif
