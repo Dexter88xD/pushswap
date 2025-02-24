@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 11:55:31 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 21:12:29 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int		putting_min_top(t_list **stack);
 
 int		update_index(t_list *stack);
 int		update_rank(t_list *stack);
-// int		update_stack_a(t_list **stack_a, t_list **stack_b);
 int		update_stack_b(t_list **stack_a, t_list **stack_b);
 
 /*******************FIND MIN AND MAX*******************/

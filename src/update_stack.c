@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:39:51 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/23 16:37:10 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 21:11:34 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,6 @@ int	update_rank(t_list *stack)
 	}
 	return (1);
 }
-
-// int	update_stack_a(t_list **stack_a, t_list **stack_b)
-// {
-// 	update_index(*stack_a);
-// 	update_index(*stack_b);
-// 	set_target_stack_a(*stack_a, *stack_b);
-// 	set_cost(*stack_a, *stack_b);
-// 	find_cheapest(*stack_a);
-// 	return (1);
-// }
 
 int	update_stack_b(t_list **stack_a, t_list **stack_b)
 {
