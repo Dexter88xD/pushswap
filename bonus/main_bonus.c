@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 23:38:01 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 13:51:59 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:35:27 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,22 +74,6 @@ int	read_operations(t_list **stack_a, t_list **stack_b)
 	}
 	return (1);
 }
-
-// void	print_stack(t_list *stack)
-// {
-// 	t_list	*temp_stack;
-// 	int		a;
-
-// 	a = 1;
-// 	temp_stack = stack;
-// 	while (temp_stack)
-// 	{
-// 		ft_printf("Argument number %d: %d\n", a++, temp_stack->content);
-// 		if (temp_stack->target)
-// 			ft_printf("The target: %d\n", temp_stack->target->content);
-// 		temp_stack = temp_stack->next;
-// 	}
-// }
 
 int	main(int ac, char **av)
 {
