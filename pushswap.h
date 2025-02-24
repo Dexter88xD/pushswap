@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 00:16:21 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 00:37:28 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,6 @@ int		update_stack_b(t_list **stack_a, t_list **stack_b);
 
 /*******************FIND MIN AND MAX*******************/
 
-int		find_min_num(t_list *stack);
-int		find_max_num(t_list *stack);
-
 t_list	*find_min(t_list *stack);
 t_list	*find_max(t_list *stack);
 
@@ -106,9 +103,11 @@ int		dumping_stack_a(t_list **stack_a, t_list **stack_b);
 int		dumping_stack_b(t_list **stack_a, t_list **stack_b);
 
 /*******************FINISHING*******************/
+
 int		putting_min_top(t_list **stack);
 
 /*******************BONUS*******************/
+
 int		read_instructions(char **instructions);
 
 #endif
