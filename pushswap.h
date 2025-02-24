@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/23 16:32:00 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 00:16:21 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,8 @@ int		dumping_stack_b(t_list **stack_a, t_list **stack_b);
 
 /*******************FINISHING*******************/
 int		putting_min_top(t_list **stack);
+
+/*******************BONUS*******************/
+int		read_instructions(char **instructions);
 
 #endif

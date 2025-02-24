@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/23 23:38:20 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 00:28:42 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,3 @@ int	store_and_check(int ac, char **av, t_list **stack_a)
 	return (1);
 }
 
-int	main(int ac, char **av)
-{
-	t_list	*stack_a;
-	t_list	*stack_b;
-
-	if (ac < 2 || (ac == 2 && !av[1][0]))
-		return (1);
-	stack_a = NULL;
-	stack_b = NULL;
-	if (store_and_check(ac, av, &stack_a) == 0)
-		return (-1);
-	if (!is_it_sorted(stack_a))
-		sorting(&stack_a, &stack_b);
-	ft_lstclear(&stack_a);
-	return (0);
-}
