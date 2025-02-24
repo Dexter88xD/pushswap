@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 23:38:01 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 14:35:27 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 14:49:03 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	main(int ac, char **av)
 	t_list	*stack_b;
 
 	if (ac == 2 && !av[1][0])
-		return (ft_printf("Error\n"), 1);
+		return (ft_putstr_fd("Error\n", 2), 1);
 	if (ac < 2)
 		return (1);
 	stack_a = NULL;
@@ -91,9 +91,9 @@ int	main(int ac, char **av)
 	if (!read_operations(&stack_a, &stack_b))
 		return (-1);
 	if (is_it_sorted(stack_a) && !stack_b)
-		ft_printf("OK\n");
+		ft_putstr_fd("OK\n", 1);
 	else
-		ft_printf("KO\n");
+		ft_putstr_fd("KO\n", 1);
 	ft_lstclear(&stack_a);
 	return (0);
 }
