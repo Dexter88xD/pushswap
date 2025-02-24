@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 23:38:01 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 01:21:36 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 01:32:38 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,13 @@ int	main(int ac, char **av)
 		return (-1);
 	read_instructions(instructions);
 	// function to check if there is something other than the operations
+	//merge read and follow instructions functions to excute when given an instruction
+	//and check why it prints OK when given ./checker 3 2 1 and ra and some trash arguments!!!!1
 	follow_instructions(instructions, &stack_a, &stack_b);
 	if (!is_it_sorted(stack_a))
-		ft_printf("OK\n");
-	else
 		ft_printf("KO\n");
+	else
+		ft_printf("OK\n");
 	i = 0;
 	while (instructions[i])
 	{
