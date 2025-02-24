@@ -6,26 +6,25 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 01:04:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 01:17:31 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:37:08 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-int	rev_rotations(char **instr, t_list **stack_a, t_list **stack_b,
-		int i)
+int	rev_rotations(char *op, t_list **stack_a, t_list **stack_b)
 {
-	if (ft_strncmp(instr[i], "rra", ft_strlen(instr[i])))
+	if (!ft_strncmp(op, "rra\n", 4))
 	{
 		reverse_rotate_a(stack_a, 1);
 		return (1);
 	}
-	else if (ft_strncmp(instr[i], "rrb", ft_strlen(instr[i])))
+	else if (!ft_strncmp(op, "rrb\n", 4))
 	{
 		reverse_rotate_b(stack_b, 1);
 		return (1);
 	}
-	else if (ft_strncmp(instr[i], "rrr", ft_strlen(instr[i])))
+	else if (!ft_strncmp(op, "rrr\n", 4))
 	{
 		reverse_rotate_a_b(stack_a, stack_b);
 		return (1);
@@ -33,19 +32,19 @@ int	rev_rotations(char **instr, t_list **stack_a, t_list **stack_b,
 	return (0);
 }
 
-int	rotations(char **instr, t_list **stack_a, t_list **stack_b, int i)
+int	rotations(char *op, t_list **stack_a, t_list **stack_b)
 {
-	if (ft_strncmp(instr[i], "ra", ft_strlen(instr[i])))
+	if (!ft_strncmp(op, "ra\n", 3))
 	{
 		rotate_a(stack_a, 1);
 		return (1);
 	}
-	else if (ft_strncmp(instr[i], "rb", ft_strlen(instr[i])))
+	else if (!ft_strncmp(op, "rb\n", 3))
 	{
 		rotate_b(stack_b, 1);
 		return (1);
 	}
-	else if (ft_strncmp(instr[i], "rr", ft_strlen(instr[i])))
+	else if (!ft_strncmp(op, "rr\n", 3))
 	{
 		rotate_a_b(stack_a, stack_b);
 		return (1);
@@ -53,52 +52,50 @@ int	rotations(char **instr, t_list **stack_a, t_list **stack_b, int i)
 	return (0);
 }
 
-int	pushing(char **instr, t_list **stack_a, t_list **stack_b, int i)
+int	pushing(char *op, t_list **stack_a, t_list **stack_b)
 {
-	if (ft_strncmp(instr[i], "pa", ft_strlen(instr[i])))
+	if (!ft_strncmp(op, "pa\n", 3))
 	{
 		push_a(stack_a, stack_b);
+		return (1);
 	}
-	else if (ft_strncmp(instr[i], "pb", ft_strlen(instr[i])))
+	else if (!ft_strncmp(op, "pb\n", 3))
 	{
 		push_b(stack_a, stack_b);
+		return (1);
 	}
 	return (0);
 }
 
-int	swaping(char **instr, t_list **stack_a, t_list **stack_b, int i)
+int	swaping(char *op, t_list **stack_a, t_list **stack_b)
 {
-	if (ft_strncmp(instr[i], "sa", ft_strlen(instr[i])))
+	if (!ft_strncmp(op, "sa\n", 3))
 	{
 		swap_a(stack_a);
+		return (1);
 	}
-	else if (ft_strncmp(instr[i], "sb", ft_strlen(instr[i])))
+	else if (!ft_strncmp(op, "sb\n", 3))
 	{
 		swap_b(stack_b);
+		return (1);
 	}
-	else if (ft_strncmp(instr[i], "ss", ft_strlen(instr[i])))
+	else if (!ft_strncmp(op, "ss\n", 3))
 	{
 		swap_a_b(stack_a, stack_b);
+		return (1);
 	}
 	return (0);
 }
 
-int	follow_instructions(char **instr, t_list **stack_a, t_list **stack_b)
+int	follow_operations(char *op, t_list **stack_a, t_list **stack_b)
 {
-	int	i;
-	int	check;
-
-	i = 0;
-	while (instr[i])
-	{
-		check = rotations(instr, stack_a, stack_b, i);
-		if (!check)
-			check = rev_rotations(instr, stack_a, stack_b, i);
-		if (!check)
-			check = pushing(instr, stack_a, stack_b, i);
-		if (!check)
-			check = swaping(instr, stack_a, stack_b, i);
-		i++;
-	}
+	if (rotations(op, stack_a, stack_b))
+		return (1);
+	if (rev_rotations(op, stack_a, stack_b))
+		return (1);
+	if (pushing(op, stack_a, stack_b))
+		return (1);
+	if (swaping(op, stack_a, stack_b))
+		return (1);
 	return (0);
 }

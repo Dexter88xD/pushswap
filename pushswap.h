@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:21:43 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 01:21:19 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 11:55:31 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,13 @@ int		putting_min_top(t_list **stack);
 
 /*******************BONUS*******************/
 
-int		read_instructions(char **instr);
+int		read_operations(t_list **stack_a, t_list **stack_b);
 
-int		follow_instructions(char **instr, t_list **stack_a, t_list **stack_b);
+int		follow_operations(char *op, t_list **stack_a, t_list **stack_b);
 
-int		swaping(char **instr, t_list **stack_a, t_list **stack_b, int i);
-int		pushing(char **instr, t_list **stack_a, t_list **stack_b, int i);
-int		rotations(char **instr, t_list **stack_a, t_list **stack_b, int i);
-int		rev_rotations(char **instr, t_list **stack_a, t_list **stack_b, int i);
+int		swaping(char *op, t_list **stack_a, t_list **stack_b);
+int		pushing(char *op, t_list **stack_a, t_list **stack_b);
+int		rotations(char *op, t_list **stack_a, t_list **stack_b);
+int		rev_rotations(char *op, t_list **stack_a, t_list **stack_b);
 
 #endif

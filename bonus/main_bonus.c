@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 23:38:01 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 01:32:38 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:51:59 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	store_numbers(int ac, char **av, t_list **stack_a)
 	{
 		i = 0;
 		nbr = ft_split(av[numb], ' ');
+		if (!*nbr)
+			return (free_node(nbr), ft_lstclear(stack_a), 0);
 		while (nbr[i])
 		{
 			if (check_numbers(i, nbr) == 0)
@@ -44,8 +46,7 @@ int	store_numbers(int ac, char **av, t_list **stack_a)
 			ft_lstadd_back(stack_a, new_node);
 			i++;
 		}
-		free_node(nbr);
-		numb++;
+		((free_node(nbr)), numb++);
 	}
 	return (1);
 }
@@ -59,54 +60,56 @@ int	store_and_check(int ac, char **av, t_list **stack_a)
 	return (1);
 }
 
-int	read_instructions(char **instructions)
+int	read_operations(t_list **stack_a, t_list **stack_b)
 {
-	int	i;
+	char	*op;
 
-	i = 0;
-	instructions[i] = get_next_line(0);
-	while (instructions[i])
+	op = get_next_line(0);
+	while (op)
 	{
-		i++;
-		instructions[i] = get_next_line(0);
+		if (!follow_operations(op, stack_a, stack_b))
+			return (ft_putstr_fd("Error\n", 2), free(op), 0);
+		free(op);
+		op = get_next_line(0);
 	}
-	instructions[i] = NULL;
-	return (0);
+	return (1);
 }
+
+// void	print_stack(t_list *stack)
+// {
+// 	t_list	*temp_stack;
+// 	int		a;
+
+// 	a = 1;
+// 	temp_stack = stack;
+// 	while (temp_stack)
+// 	{
+// 		ft_printf("Argument number %d: %d\n", a++, temp_stack->content);
+// 		if (temp_stack->target)
+// 			ft_printf("The target: %d\n", temp_stack->target->content);
+// 		temp_stack = temp_stack->next;
+// 	}
+// }
 
 int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	char	**instructions;
-	int		i;
 
-	i = 0;
-	if (ac < 2 || (ac == 2 && !av[1][0]))
+	if (ac == 2 && !av[1][0])
 		return (ft_printf("Error\n"), 1);
+	if (ac < 2)
+		return (1);
 	stack_a = NULL;
 	stack_b = NULL;
-	if (store_and_check(ac, av, &stack_a) == 0)
+	if (!store_and_check(ac, av, &stack_a))
 		return (-1);
-	instructions = malloc(10000 * sizeof(char *));
-	if (!instructions)
+	if (!read_operations(&stack_a, &stack_b))
 		return (-1);
-	read_instructions(instructions);
-	// function to check if there is something other than the operations
-	//merge read and follow instructions functions to excute when given an instruction
-	//and check why it prints OK when given ./checker 3 2 1 and ra and some trash arguments!!!!1
-	follow_instructions(instructions, &stack_a, &stack_b);
-	if (!is_it_sorted(stack_a))
-		ft_printf("KO\n");
-	else
+	if (is_it_sorted(stack_a) && !stack_b)
 		ft_printf("OK\n");
-	i = 0;
-	while (instructions[i])
-	{
-		free(instructions[i]);
-		i++;
-	}
-	free(instructions);
+	else
+		ft_printf("KO\n");
 	ft_lstclear(&stack_a);
 	return (0);
 }

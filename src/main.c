@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 00:58:51 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:48:26 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	store_numbers(int ac, char **av, t_list **stack_a)
 	{
 		i = 0;
 		nbr = ft_split(av[numb], ' ');
+		if (!*nbr)
+			return (free_node(nbr), ft_lstclear(stack_a), 0);
 		while (nbr[i])
 		{
 			if (check_numbers(i, nbr) == 0)
@@ -44,8 +46,7 @@ int	store_numbers(int ac, char **av, t_list **stack_a)
 			ft_lstadd_back(stack_a, new_node);
 			i++;
 		}
-		free_node(nbr);
-		numb++;
+		((free_node(nbr)), numb++);
 	}
 	return (1);
 }
