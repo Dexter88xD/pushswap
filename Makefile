@@ -21,7 +21,7 @@ SRCS =	check_numbers.c		find_min_max.c			push_swap.c			setting_target.c	\
 		dumping_stacks.c	main.c					reverse_rotate.c  	sorting.c			\
 		find_cheap_cost.c	rotate.c				update_stack.c							\
 
-BSRCS =	main_bonus.c check_numbers_bonus.c
+BSRCS =	main_bonus.c check_numbers_bonus.c rotate_bonus.c reverse_rotate_bonus.c push_swap_bonus.c
 
 S_OBJECTS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 BS_OBJECTS = $(addprefix $(BONUS_OBJ_DIR)/, $(BSRCS:.c=.o))

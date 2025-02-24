@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 23:38:01 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 00:40:37 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 00:54:59 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,37 @@ int	main(int ac, char **av)
 		return (-1);
 	read_instructions(instructions);
 	// function to check if there is something other than the operations
-	ft_printf("Here are the Operations:\n");
 	while (instructions[i])
 	{
-		ft_printf("Operation number %d: %s", i + 1, instructions[i]);
+		// ft_printf("Operation number %d: %s", i + 1, instructions[i]);
+		if (ft_strncmp(instructions[i], "ra", ft_strlen(instructions[i])))
+			rotate_a(&stack_a, 1);
+		else if (ft_strncmp(instructions[i], "rb", ft_strlen(instructions[i])))
+			rotate_b(&stack_b, 1);
+		else if (ft_strncmp(instructions[i], "rr", ft_strlen(instructions[i])))
+			rotate_a_b(&stack_a, &stack_b);
+		else if (ft_strncmp(instructions[i], "rra", ft_strlen(instructions[i])))
+			reverse_rotate_a(&stack_a, 1);
+		else if (ft_strncmp(instructions[i], "rrb", ft_strlen(instructions[i])))
+			reverse_rotate_b(&stack_b, 1);
+		else if (ft_strncmp(instructions[i], "rrr", ft_strlen(instructions[i])))
+			reverse_rotate_a_b(&stack_a, &stack_b);
+		else if (ft_strncmp(instructions[i], "sa", ft_strlen(instructions[i])))
+			swap_a(&stack_a);
+		else if (ft_strncmp(instructions[i], "sb", ft_strlen(instructions[i])))
+			swap_b(&stack_b);
+		else if (ft_strncmp(instructions[i], "ss", ft_strlen(instructions[i])))
+			swap_a_b(&stack_a, &stack_b);
+		else if (ft_strncmp(instructions[i], "pa", ft_strlen(instructions[i])))
+			push_a(&stack_a, &stack_b);
+		else if (ft_strncmp(instructions[i], "pb", ft_strlen(instructions[i])))
+			push_b(&stack_a, &stack_b);
 		i++;
 	}
+	if (!is_it_sorted(stack_a))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
 	i = 0;
 	while (instructions[i])
 	{
