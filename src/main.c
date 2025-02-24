@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 13:48:26 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:05:25 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int ac, char **av)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	if (ac < 2 || (ac == 2 && !av[1][0]))
+	if (ac < 2)
 		return (1);
 	stack_a = NULL;
 	stack_b = NULL;
