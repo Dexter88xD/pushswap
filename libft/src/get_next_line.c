@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 09:03:49 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/23 17:32:01 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/25 13:01:13 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static char	*line_extract(char **buffer)
 {
-	char	*line;
-	char	*temp;
-	size_t	i;
-
+	size_t (i);
+	char *(line), *(temp);
 	i = 0;
 	line = NULL;
 	if (!(*buffer))
@@ -37,6 +35,8 @@ static char	*line_extract(char **buffer)
 		free(*buffer);
 		*buffer = NULL;
 	}
+	if (!**buffer)
+		(free(*buffer), *buffer = NULL);
 	return (line);
 }
 

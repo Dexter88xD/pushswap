@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 23:38:01 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/24 15:15:48 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/02/25 12:47:32 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ int	read_operations(t_list **stack_a, t_list **stack_b)
 	while (op)
 	{
 		if (!follow_operations(op, stack_a, stack_b))
-			return (ft_putstr_fd("Error\n", 2), free(op), 0);
+			return (ft_putstr_fd("Error\n", 2), free(op),
+				ft_lstclear(stack_a), ft_lstclear(stack_b), 0);
 		free(op);
 		op = get_next_line(0);
 	}
