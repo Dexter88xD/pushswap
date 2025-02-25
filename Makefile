@@ -14,7 +14,7 @@ BONUS_OBJ_DIR = bonus_obj
 MAKE_LIBFT = @$(MAKE) -C $(LIBFT)
 FCLEAN_LIBFT = @$(MAKE) fclean -C $(LIBFT)
 
-S_NAME = push_swap
+NAME = push_swap
 BS_NAME = checker
 
 SRCS =	check_numbers.c		find_min_max.c	push_swap.c			setting_target.c	\
@@ -27,10 +27,10 @@ BSRCS =	main_bonus.c			check_numbers_bonus.c		rotate_bonus.c	push_swap_bonus.c	\
 S_OBJECTS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 BS_OBJECTS = $(addprefix $(BONUS_OBJ_DIR)/, $(BSRCS:.c=.o))
 
-all: $(S_NAME) 
+all: $(NAME) 
 
-$(S_NAME): $(S_OBJECTS) $(LIBFT)/libft.a
-	$(CC) -o $(S_NAME) $(S_OBJECTS) $(LIB_FLAGS)
+$(NAME): $(S_OBJECTS) $(LIBFT)/libft.a
+	$(CC) -o $(NAME) $(S_OBJECTS) $(LIB_FLAGS)
 
 bonus: $(BS_NAME)
 
@@ -53,7 +53,7 @@ clean:
 	$(RM) $(OBJ_DIR) $(BONUS_OBJ_DIR)
 
 fclean: clean
-	$(RM) $(S_NAME)  $(BS_NAME) $(BC_NAME)
+	$(RM) $(NAME) $(BS_NAME)
 
 re: fclean all
 
