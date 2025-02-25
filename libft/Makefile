@@ -6,9 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 SRC_DIR = src
-BONUS_DIR = bonus
 OBJ_DIR = obj
-BONUS_OBJ_DIR = bonus_obj
 
 NAME = libft.a
 

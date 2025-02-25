@@ -43,11 +43,6 @@ dexter88xd-pushswap/
 │   ├── Makefile
 │   ├── libft.h
 │   └── src/
-│       ├── ft_atoi.c
-│       ├── ft_bzero.c
-│       ├── ... (other utility functions)
-│       ├── get_next_line.c
-│       └── get_next_line_utils.c
 └── src/
     ├── check_numbers.c
     ├── dumping_stacks.c
