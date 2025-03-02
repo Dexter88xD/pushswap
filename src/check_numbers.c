@@ -6,7 +6,7 @@
 /*   By: sohamdan <sohamdan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:16:35 by sohamdan          #+#    #+#             */
-/*   Updated: 2025/02/17 05:43:42 by sohamdan         ###   ########.fr       */
+/*   Updated: 2025/03/02 15:23:09 by sohamdan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	is_it_integer(char *nbr)
 
 	check = 0;
 	sign = 1;
+	if (ft_strlen(nbr) > 11)
+		return (0);
 	if (*nbr == '-')
 	{
 		nbr++;
