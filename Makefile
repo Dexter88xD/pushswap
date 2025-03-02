@@ -48,9 +48,11 @@ $(BONUS_OBJ_DIR)/%.o: $(BONUS_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT)/libft.a:
+	@echo "compiling libft!!"
 	@$(MAKE) --no-print-directory -C $(LIBFT)
 
 clean:
+	@echo "cleaning libft files!!"
 	@$(MAKE) --no-print-directory fclean -C $(LIBFT)
 	@echo "cleaning files!!"
 	@$(RM) $(OBJ_DIR) $(BONUS_OBJ_DIR)

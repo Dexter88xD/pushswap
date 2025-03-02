@@ -26,7 +26,6 @@ OBJECTS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@echo "compiling libft!!"
 	@ar rcs $(NAME) $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -34,7 +33,6 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@echo "cleaning libft files!!"
 	@$(RM) $(OBJ_DIR)
 
 fclean: clean
