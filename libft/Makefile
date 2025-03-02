@@ -24,17 +24,19 @@ S_OBJECTS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
 all: $(NAME)
 
 $(NAME): $(S_OBJECTS) $(BONUS_OBJECTS) $(PRINTF_OBJECTS) $(GNL_OBJECTS)
-	ar rcs $(NAME) $^
+	@echo "compiling libft!!"
+	@ar rcs $(NAME) $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ_DIR)
+	@echo "cleaning libft files!!"
+	@$(RM) $(OBJ_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
